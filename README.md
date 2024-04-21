@@ -10,6 +10,8 @@ run `./install_dots.sh` to install only dotfiles, oh-my-zsh, and nvim config
 
 run `./install_dev.sh` to install global npm, go, and python packages (requires languages to have been installed first)
 
+Installing the key map in `src/` requires [ukelele](https://software.sil.org/ukelele/)
+
 ## Recommended Additional Software
 
 ### Code Editors
@@ -37,8 +39,9 @@ run `./install_dev.sh` to install global npm, go, and python packages (requires 
 
 ### Mac Apps
 
-- [Color Slurg](https://colorslurp.com/)
+- [Color Slurp](https://colorslurp.com/)
 - [Magnet](https://magnet.crowdcafe.com/)
 - [iStats](https://bjango.com/mac/istatmenus/)
-- [shotter](https://shottr.cc/)
-- [topNotch](https://topnotch.app/)
+- [shotter](https://shottr.cc/) better screen shot tool
+- [topNotch](https://topnotch.app/) hides the notch
+- [ukelele](https://software.sil.org/ukelele/) for creating and installing custom key maps

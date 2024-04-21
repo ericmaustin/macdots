@@ -159,10 +159,10 @@ for package in "${BREW_PACKAGES[@]}"; do
   brew install $package
 done
 
-# install raycast
+brew install imagemagick --with-webp
+# raycast
 brew install --cask raycast
-
-# Install GNU `sed`, overwriting the built-in `sed`.
+# GNU `sed`
 brew install gnu-sed --with-default-names
 
 # Install fonts from cask-fonts
@@ -179,3 +179,4 @@ for font in $fonts; do
   echo "Installing $font"
   brew install --cask $font
 done
+c
