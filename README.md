@@ -27,7 +27,7 @@ Installing the key map in `src/` requires [ukelele](https://software.sil.org/uke
 - [Paw](https://paw.cloud/)
 - [Boop](https://boop.okat.best/)
 - [Tower](https://www.git-tower.com/)
-- [Be Focused](https://apps.apple.com/us/app/be-focused-focus-timer/id973130201)
+- [Orb Stack](https://orbstack.dev/)
 
 ### Note Taking
 
@@ -40,6 +40,7 @@ Installing the key map in `src/` requires [ukelele](https://software.sil.org/uke
 ### Mac Apps
 
 - [Color Slurp](https://colorslurp.com/)
+- [Be Focused](https://apps.apple.com/us/app/be-focused-focus-timer/id973130201)
 - [Magnet](https://magnet.crowdcafe.com/)
 - [iStats](https://bjango.com/mac/istatmenus/)
 - [shotter](https://shottr.cc/) better screen shot tool
