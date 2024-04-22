@@ -33,14 +33,21 @@ function copy_files_with_backups() {
 # Usage example
 copy_files_with_backups "$DOTS_DIR" "$HOME"
 
-profile=<<EOF
-eval "$(/opt/homebrew/bin/brew shellenv)"
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-EOF
+if [ ! -f "$HOME/.zprofile" ]; then
+  touch $HOME/.zprofile
+fi
 
-echo $profile >> $HOME/.zprofile
+if ! grep -q "eval \"(/opt/homebrew/bin/brew shellenv)\"" $HOME/.zprofile; then
+  echo "Adding brew shellenv to zprofile"
+  echo "eval \"(/opt/homebrew/bin/brew shellenv)\"" >> $HOME/.zprofile
+fi
+
+if ! grep -q "export PYENV_ROOT=\"$HOME/.pyenv\"" $HOME/.zprofile; then
+  echo "Adding pyenv to zprofile"
+  echo "export PYENV_ROOT=\"$HOME/.pyenv\"" >> $HOME/.zprofile
+  echo "export PATH=\"$PYENV_ROOT/bin:$PATH\"" >> $HOME/.zprofile
+  echo "eval \"$(pyenv init --path)\"" >> $HOME/.zprofile
+fi
 
 # Install ohmyzsh if not installed
 if [ ! -d "$HOME/.oh-my-zsh" ]; then

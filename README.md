@@ -46,3 +46,4 @@ Installing the key map in `src/` requires [ukelele](https://software.sil.org/uke
 - [shotter](https://shottr.cc/) better screen shot tool
 - [topNotch](https://topnotch.app/) hides the notch
 - [ukelele](https://software.sil.org/ukelele/) for creating and installing custom key maps
+- [eqMac](https://eqmac.app/) system wide equalizer

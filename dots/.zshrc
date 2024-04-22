@@ -1,5 +1,4 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -36,7 +35,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -45,11 +44,23 @@ else
   export EDITOR='nvim'
 fi
 
+# One of @janmoesen’s ProTip™s
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+	alias "${method}"="lwp-request -m '${method}'"
+done
+
+# gpg setup
+export GPG_TTY=$(tty)
+
+# zoxide
+eval "$(zoxide init zsh)"
+
+# Aliases
 alias ....="cd ../../.."
 alias ...="cd ../.."
 alias ..="cd .."
 alias c="clear"
-alias d="eza --icons -D"
+alias d="docker"
 alias dl="docker ps -a"
 alias dli="docker images"
 alias g="git"
@@ -106,14 +117,6 @@ alias sha512="openssl sha -sha512"
 alias tf="terraform"
 alias tg="terragrunt"
 alias v="nvim"
-
-# One of @janmoesen’s ProTip™s
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "${method}"="lwp-request -m '${method}'"
-done
-
-# gpg setup
-export GPG_TTY=$(tty)
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+alias tree="tre -e"
+alias x="xsel --clipboard"
+alias xa="xsel --append --clipboard"

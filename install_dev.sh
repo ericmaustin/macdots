@@ -32,3 +32,6 @@ rm -rf ~/.config/nvim/.git
 for package in "${GO_PACKAGES[@]}"; do
   go install $package
 done
+
+# install nix
+sh <(curl -L https://nixos.org/nix/install) --daemon

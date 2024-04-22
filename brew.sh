@@ -1,32 +1,18 @@
 #! /bin/env bash
+
+# Install or update all homebrew packages
+
 PACKAGES=(
-  # prerequisites
+  # security
   openssl
-  utm
   gpg
-  gdb
-  coreutils
-  moreutils
 
   # mac improvements
   alt-tab
 
-  # browsers
-  firefox
-  google-chrome
-
-  # media
-  spotify
-
-  # messaging
-  zoom
-  slack
-  signal
-
-  # editors and terminals
+  # editors
   neovim
   tmux
-  warp
 
   # cloud providers and tools
   awscli
@@ -40,9 +26,21 @@ PACKAGES=(
   yq
   fzf
   ripgrep
-  tree
+  tre
   screen
   pinentry-mac
+  bat
+  nnn
+  zoxide
+  thefuck
+  tldr
+  scc
+  aria2
+  entr
+  just
+  sd
+  xsel
+  gnu-sed
 
   # lua
   lua
@@ -60,12 +58,13 @@ PACKAGES=(
   cquery
   ctags
   cscope
+  coreutils
+  moreutils
 
   # rust
   rust
   rustup
   rust-analyzer
-  cmake
 
   # containers
   docker
@@ -97,7 +96,7 @@ PACKAGES=(
   pyright
   python
   black
-  conda
+  miniconda
 
   # terraform
   terraform
@@ -126,8 +125,24 @@ PACKAGES=(
   bats
   bash-language-server
   zsh-syntax-highlighting
+
+  # misc
+  utm
+  imagemagick
+
+  # gui apps
+  warp
+  raycast
+  zoom
+  slack
+  signal
+  discord
+  spotify
+  firefox
+  google-chrome
 )
 
+# Fonts from cask-fonts
 FONTS=(
   inter
   inter-tight
@@ -152,18 +167,10 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Update Homebrew
 brew update
 
-installed_packages=$(brew list --formula)
-
 # Install or update brew packages
-for package in "${BREW_PACKAGES[@]}"; do
+for package in "${PACKAGES[@]}"; do
   brew install $package
 done
-
-brew install imagemagick --with-webp
-# raycast
-brew install --cask raycast
-# GNU `sed`
-brew install gnu-sed --with-default-names
 
 # Install fonts from cask-fonts
 brew tap homebrew/cask-fonts
@@ -179,4 +186,3 @@ for font in $fonts; do
   echo "Installing $font"
   brew install --cask $font
 done
-c
