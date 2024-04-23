@@ -48,3 +48,7 @@ Installing the key map in `src/` requires [ukelele](https://software.sil.org/uke
 - [Karabiner](https://karabiner-elements.pqrs.org/) for keyboard mods and remapping
 - [ukelele](https://software.sil.org/ukelele/) for creating and installing custom key maps
 - [eqMac](https://eqmac.app/) system wide equalizer
+
+### Todo
+
+- [ ] installer for [kmonad](https://github.com/kmonad/kmonad-contrib/tree/master) with custom keymap

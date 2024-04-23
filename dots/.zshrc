@@ -51,6 +51,7 @@ done
 
 # gpg setup
 export GPG_TTY=$(tty)
+gpgconf --launch gpg-agent
 
 # zoxide
 eval "$(zoxide init zsh)"
