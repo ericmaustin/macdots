@@ -98,6 +98,12 @@ PACKAGES=(
   black
   miniconda
 
+  # haskell
+  ghc
+  haskell-stack
+  haskell-lanugage-server
+  stylish-haskell
+
   # terraform
   terraform
   terragrunt
@@ -129,6 +135,7 @@ PACKAGES=(
   # misc
   utm
   imagemagick
+  xcodegen
 
   # gui apps
   warp
